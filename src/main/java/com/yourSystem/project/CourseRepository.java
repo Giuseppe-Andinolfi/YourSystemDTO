@@ -6,17 +6,16 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface CourseRepository extends JpaRepository<Course, Long> {
+public interface CourseRepository extends JpaRepository<CourseDTO, Long> {
     // Metodo per salvare un corso nel database
-    Course save(Course course);
+    CourseDTO save(CourseDTO course);
 
     // Metodo per trovare un corso dal database usando l'ID
-    Optional<Course> findById(Long id);
+    Optional<CourseDTO> findById(Long id);
 
     // Metodo per trovare tutti i corsi nel database
-    List<Course> findAll();
+    List<CourseDTO> findAll();
 
     // Metodo per eliminare un corso dal database usando l'ID
     void deleteById(Long id);
 }
-
